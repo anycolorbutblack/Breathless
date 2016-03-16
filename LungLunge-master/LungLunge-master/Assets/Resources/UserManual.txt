@@ -1,0 +1,20 @@
+The goal of the game is to get to the end of the level in as quick as time as possible.
+
+The controls to do so are;
+JUMP : SPACE BAR
+MOVING RIGHT : RIGHT ARROW  OR D
+MOVING LEFT : LEFT ARROW  OR A
+MENU : ESCAPE 
+USE PUFFER ON SELF : CTRL OR LEFT-CLICK
+USE PUFFER ON OBSTACLE : ALT OR RIGHT-CLICK
+
+There are obstacles that will appear and the goal is to avoid, otherwise you will be slowed down.
+Jumping is the best way to avoid the obstacles.
+Another option is to destroy the enemy by using the PUFFER ON OBSTACLE.
+Once you run out of the puffer charge you will not be able to recover breath unless you stop.
+The puffer charge is the resource used for PUFFER ON OBSTACLE.
+You may recover breath by using the puffer on self. 
+
+There are objects throughout the game that can add a charge to your puffer.
+This is the only to regain it.
+
