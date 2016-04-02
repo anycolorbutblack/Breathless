@@ -12,13 +12,15 @@ public class Pedestrian : MonoBehaviour {
 	public void Avoid(float otherped){
 		//avoids
 	}
-	public void GetLocation(){
+	public float GetLocation(){
 		return CurrentLocation;
 	}
 	public bool DestReached(){
 		if (CurrentLocation == Destination){
+			return true;
  			//call despawn
 		}
+		return false;
 	}
 	public void UpdateMovement(){
 		//calc path
@@ -32,7 +34,7 @@ public class Pedestrian : MonoBehaviour {
 		if (Destination == SpawnPosition) {
 			Start();
 		}
-		CurrentLocation == SpawnPosition;	
+		CurrentLocation = SpawnPosition;	
 	}
 	
 	// Update is called once per frame
