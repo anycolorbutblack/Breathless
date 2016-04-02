@@ -99,7 +99,7 @@ public class PlayerManager: MonoBehaviour {
     public bool isRunning()
     {
         if (rb == null || !grounded) return false;
-        return Mathf.Abs(rb.velocity.x) > 0.1;
+		return Mathf.Abs(rb.velocity.x +rb.velocity.z) > 0.1;
     }
 
     /// <summary>
@@ -128,46 +128,36 @@ public class PlayerManager: MonoBehaviour {
             new Vector3(transform.position.x + xoffset, transform.position.y + 1.0f, transform.position.z),
             Quaternion.identity);
     }
-	
+
     /// <summary>
     /// Run in a direction.
     /// </summary>
     /// <param name="direction">Direction to run. Positive values are to the left. </param>
     public void run(float direction)
     {
-        direction = Mathf.Clamp(direction, -1.0f, 1.0f);
+     
         Transform tmesh = transform.Find("SportyGirl").transform;
-        //rotate model so he is facing in direction of movement. 
-        if (direction < 0.0f)
-        {
-            this.direction = -1;
-            tmesh.eulerAngles = Vector3.Lerp(tmesh.eulerAngles, new Vector3(tmesh.eulerAngles.x, ROTATION_ANGLE_LEFT, tmesh.eulerAngles.z), 0.5f);
-        }
-        else if (direction > 0.0f)
-        {
-            this.direction = 1;
-			tmesh.eulerAngles = Vector3.Lerp(tmesh.eulerAngles, new Vector3(tmesh.eulerAngles.x, ROTATION_ANGLE_RIGHT, tmesh.eulerAngles.z), 0.5f);
-        }
-
-        //now apply the velocity to the rigidbody.
 		if (getBreath () > 5) {
+
 			rb.velocity = new Vector3 (direction * MoveSpeed, rb.velocity.y, rb.velocity.z);
+			transform.forward = Vector3.Normalize (new Vector3 (Input.GetAxis ("Horizontal"), 0f, Input.GetAxis ("Vertical")));
+
 		}
     }
+	public void runup(float direction)
+	{
+
+		Transform tmesh = transform.Find ("SportyGirl").transform;
+		if (getBreath () > 5) {
+			rb.velocity = new Vector3 (rb.velocity.x, rb.velocity.y, direction * MoveSpeed);
+		}
+	}
+
 
     /// <summary>
     /// Command the player to jump. Player must have sufficient breath to jump. 
     /// We must also determine if the player is touching the ground and is therefore able to jump. 
     /// </summary>
-    public void jump()
-    {
-        if (currentBreath < JumpDepletionAmount) return;
-        if (!grounded) return;
-		actionController.Jump ();
-        currentBreath -= JumpDepletionAmount;
-        rb.velocity += new Vector3(0.0f, JumpSpeed, 0.0f);
-    }
-
     void Update()
     {
         //Start/reset the recovery timer based on if we're running or not. Also deplete breath

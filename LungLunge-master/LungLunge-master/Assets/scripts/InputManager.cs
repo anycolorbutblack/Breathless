@@ -22,10 +22,7 @@ public class InputManager: MonoBehaviour
     {
         //running and jumping
         pm.run(Input.GetAxisRaw("Horizontal"));
-        if (Input.GetButtonDown("Jump"))
-        {
-            pm.jump();
-        }
+		pm.runup(Input.GetAxisRaw("Vertical"));
         if (Input.GetButtonDown("PufferSpray")) pm.PufferSpray();
         if (Input.GetButtonDown("PufferSelf")) pm.PufferUseSelf();
 
