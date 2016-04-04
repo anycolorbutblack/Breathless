@@ -8,8 +8,6 @@ using System.Diagnostics;
 /// breath and puffer charge. 
 /// </summary>
 public class PlayerManager: MonoBehaviour {
-    private const float ROTATION_ANGLE_RIGHT = 90.0f;
-    private const float ROTATION_ANGLE_LEFT = 270.0f;
     private const float WINTER_PENALTY = 25.0f;
     public float MoveSpeed;
     public float JumpSpeed;
