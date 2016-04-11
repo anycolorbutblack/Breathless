@@ -6,7 +6,7 @@ public class Pedestrian : MonoBehaviour {
 	private float Detectionrange;
 	private float Runspeed = 3.0f;
 	private Vector3 SpawnPosition = new Vector3(1,0,1);
-	private Vector3 Destination = new Vector3(50,0,50);
+	public Vector3 Destination = new Vector3(50,0,50);
 	private float Heading;
 	private Vector3 CurrentLocation;
 	Rigidbody rb = null; 
@@ -33,10 +33,12 @@ public class Pedestrian : MonoBehaviour {
 		float Xdir = Mathf.Sign(Heading.x);
 		float Zdir = Mathf.Sign(Heading.z);
 		//needs to follow pathing (which doesn't exist at the moment.)
-		if (transform.position.x <= Mathf.Abs(Destination.x)) {
+		if (transform.position.x <= Mathf.Abs(transform.position.x - Destination.x)) {
 			this.rb.velocity = new Vector3 (Xdir * Runspeed, rb.velocity.y, rb.velocity.z);
+			transform.rotation = new Quaternion (0, 90*Xdir, 0,1 );
 		} else {
 			this.rb.velocity = new Vector3 ( rb.velocity.x, rb.velocity.y, Zdir * Runspeed);
+			transform.rotation = new Quaternion (0, -180*Zdir, 0,1 );
 		}
 	
 		//calc path
