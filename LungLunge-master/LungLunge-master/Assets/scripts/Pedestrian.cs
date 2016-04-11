@@ -10,6 +10,7 @@ public class Pedestrian : MonoBehaviour {
 	private float Heading;
 	private Vector3 CurrentLocation;
 	Rigidbody rb = null; 
+	PlayerManager pm = null;
 	public Transform Ped= null;
 	public void Avoid(Vector3 otherped){
 		// should use grid probably
@@ -56,6 +57,7 @@ public class Pedestrian : MonoBehaviour {
 	void Start () {
 		actionController = GetComponentInChildren<ActionsNew> ();
 		rb = GetComponent<Rigidbody>();
+		pm = GetComponent<PlayerManager>();
 		//set dest
 		//set spawn pos
 		SpawnPosition = new Vector3 (Random.Range (0f, 50f), 0f, Random.Range (0f, 50f));
