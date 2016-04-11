@@ -888,11 +888,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 481240, guid: 13fcd8723a996bb448983fcb7339a733, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 48.6485825
+      value: 48.648582
       objectReference: {fileID: 0}
     - target: {fileID: 481240, guid: 13fcd8723a996bb448983fcb7339a733, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 12.8800001
+      value: 12.88
       objectReference: {fileID: 0}
     - target: {fileID: 481240, guid: 13fcd8723a996bb448983fcb7339a733, type: 2}
       propertyPath: m_LocalPosition.z
@@ -904,7 +904,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 481240, guid: 13fcd8723a996bb448983fcb7339a733, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -.707106829
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 481240, guid: 13fcd8723a996bb448983fcb7339a733, type: 2}
       propertyPath: m_LocalRotation.z
@@ -912,11 +912,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 481240, guid: 13fcd8723a996bb448983fcb7339a733, type: 2}
       propertyPath: m_LocalRotation.w
-      value: .707106709
+      value: 0.7071067
       objectReference: {fileID: 0}
     - target: {fileID: 481240, guid: 13fcd8723a996bb448983fcb7339a733, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 120014, guid: 13fcd8723a996bb448983fcb7339a733, type: 2}
       propertyPath: m_Name
@@ -3307,6 +3307,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4415413ff621745479d28327b481ede8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Destination: {x: 50, y: 0, z: 50}
+  Ped: {fileID: 0}
 --- !u!136 &1111724494
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3317,7 +3319,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1
+  m_Radius: 0.5
   m_Height: 2.06
   m_Direction: 1
   m_Center: {x: 0, y: 0.97, z: 0.8}
@@ -5475,7 +5477,7 @@ Transform:
   m_PrefabParentObject: {fileID: 412030, guid: c5edb1095ad906f4cb2480f30e8ff78f, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1969909926}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.69, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
